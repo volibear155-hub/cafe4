@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Café Origen Huila</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ============ Encabezado ============ -->
+  <header class="barra-sup">
+    <a href="#inicio" class="marca">Origen Huila</a>
+    <nav aria-label="Principal">
+      <a href="#producto">Café</a>
+      <a href="#comparador">Comparador</a>
+      <a href="#carrito" class="nav-carrito">
+        Carrito <span class="contador-carrito" id="contador-carrito">0</span>
+      </a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ============ Inicio ============ -->
+    <section id="inicio" class="portada">
+      <svg class="contornos" id="contornos" viewBox="0 0 600 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg>
+
+      <div class="portada-texto">
+        <h1>Café de montaña, cosechado a 1.700 metros.</h1>
+        <p>Granos del Huila tostados en lotes pequeños. Compra la bolsa de 500 g y compara su precio con otras marcas colombianas.</p>
+        <div class="acciones">
+          <a href="#producto" class="boton">Comprar la bolsa de 500 g</a>
+          <a href="#comparador" class="boton contorno">Comparar precios</a>
+        </div>
+      </div>
+
+      <dl class="ficha">
+        <div><dt>Región</dt><dd>Huila</dd></div>
+        <div><dt>Altura</dt><dd>1.700 m</dd></div>
+        <div><dt>Tostión</dt><dd>Media</dd></div>
+        <div><dt>Cosecha</dt><dd>2026</dd></div>
+      </dl>
+    </section>
+
+    <!-- ============ Producto ============ -->
+    <section id="producto" class="seccion claro">
+      <div class="producto">
+        <div class="producto-imagen">
+          <svg viewBox="0 0 320 400" role="img" aria-label="Bolsa de café Origen Huila de 500 gramos">
+            <ellipse cx="160" cy="382" rx="104" ry="9" fill="#14201b" opacity=".18"/>
+            <path d="M62 36 H258 L276 366 H44 Z" fill="#1b372c"/>
+            <path d="M62 36 H258 L260 62 H60 Z" fill="#11251e"/>
+            <g stroke="#e7ebe2" stroke-width="1" opacity=".5">
+              <line x1="70" y1="48" x2="250" y2="48" stroke-dasharray="3 5"/>
+            </g>
+            <rect x="70" y="112" width="180" height="196" fill="#e7ebe2"/>
+            <rect x="78" y="120" width="164" height="180" fill="none" stroke="#14201b" stroke-width="1.5"/>
+            <path d="M92 214 Q116 180 138 200 T178 176 T228 214" fill="none" stroke="#b4233c" stroke-width="2.5"/>
+            <path d="M92 228 Q120 198 146 216 T190 196 T228 228" fill="none" stroke="#14201b" stroke-width="1.5"/>
+            <path d="M92 242 Q124 214 152 232 T196 214 T228 242" fill="none" stroke="#14201b" stroke-width="1.5" opacity=".6"/>
+            <text x="160" y="154" text-anchor="middle" font-family="Big Shoulders Display, sans-serif" font-weight="900" font-size="34" fill="#14201b">ORIGEN</text>
+            <text x="160" y="184" text-anchor="middle" font-family="Big Shoulders Display, sans-serif" font-weight="900" font-size="34" fill="#14201b">HUILA</text>
+            <text x="160" y="272" text-anchor="middle" font-family="Newsreader, serif" font-style="italic" font-size="15" fill="#14201b">1.700 m sobre el nivel del mar</text>
+            <text x="160" y="292" text-anchor="middle" font-family="Newsreader, serif" font-size="13" fill="#14201b">Café especial, 500 g</text>
+          </svg>
+        </div>
+
+        <div class="producto-info">
+          <h2>Café especial Origen Huila, 500 g</h2>
+          <p class="lead">Dulce y limpio, con notas a panela y cacao y un toque cítrico al final. Lo cultivan familias caficultoras del Huila y lo tostamos en lotes pequeños para que llegue fresco.</p>
+
+          <fieldset class="grupo">
+            <legend>Molienda</legend>
+            <div class="segmentos" id="molienda">
+              <button type="button" class="segmento activa" aria-pressed="true" data-valor="Grano entero"><span>Grano entero</span><small class="seg-precio"></small></button>
+              <button type="button" class="segmento" aria-pressed="false" data-valor="Molido medio"><span>Molido medio</span><small class="seg-precio"></small></button>
+              <button type="button" class="segmento" aria-pressed="false" data-valor="Molido fino"><span>Molido fino</span><small class="seg-precio"></small></button>
+            </div>
+            <p class="ayuda" id="ayuda-molienda">Ideal para moler en casa justo antes de preparar.</p>
+          </fieldset>
+
+          <div class="perfil" aria-label="Perfil en taza según la molienda">
+            <div class="perfil-fila"><span>Acidez</span><div class="medidor" id="m-acidez" style="--v:7"></div><b id="v-acidez">7/10</b></div>
+            <div class="perfil-fila"><span>Dulzor</span><div class="medidor" id="m-dulzor" style="--v:8"></div><b id="v-dulzor">8/10</b></div>
+            <div class="perfil-fila"><span>Cuerpo</span><div class="medidor" id="m-cuerpo" style="--v:6"></div><b id="v-cuerpo">6/10</b></div>
+            <p class="perfil-nota" id="perfil-nota"></p>
+          </div>
+
+          <div class="compra">
+            <p class="precio"><span id="precio-nuestro">—</span><small id="precio-detalle">por bolsa de 500 g</small></p>
+            <div class="cantidad" role="group" aria-label="Cantidad">
+              <button type="button" id="menos" aria-label="Quitar una bolsa">−</button>
+              <span id="cantidad-selector" aria-live="polite">1</span>
+              <button type="button" id="mas" aria-label="Agregar una bolsa">+</button>
+            </div>
+            <button type="button" class="boton relleno" id="btn-anadir">Añadir al carrito</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Comparador de precios ============ -->
+    <section id="comparador" class="seccion oscuro">
+      <header class="seccion-cabeza">
+        <h2>Cuánto cuesta cada bolsa</h2>
+        <p>Convertimos todos los precios al equivalente de 500 g para que la comparación sea justa. Los precios de Juan Valdez y Sello Rojo son reales y salen de Farmatodo. Nuestro precio cambia con la molienda que elijas arriba.</p>
+      </header>
+
+      <div id="alerta" class="alerta" role="alert" hidden></div>
+
+      <div class="tabla" id="tabla-precios">
+
+        <!-- Nosotros -->
+        <article class="fila nuestra" id="fila-nuestro">
+          <div class="fila-bolsa">
+            <svg viewBox="0 0 90 110" aria-hidden="true">
+              <path d="M16 10 H74 L80 100 H10 Z" fill="#1b372c"/>
+              <path d="M16 10 H74 L74.5 18 H15.5 Z" fill="#11251e"/>
+              <rect x="20" y="36" width="50" height="50" fill="#e7ebe2"/>
+              <path d="M26 66 Q36 52 44 60 T60 54" fill="none" stroke="#b4233c" stroke-width="2"/>
+              <path d="M26 72 Q38 60 46 67 T60 62" fill="none" stroke="#14201b" stroke-width="1.2"/>
+            </svg>
+          </div>
+          <div class="fila-nombre">
+            <h3>Origen Huila</h3>
+            <p id="detalle-nuestro">Grano entero, bolsa de 500 g</p>
+          </div>
+          <div class="fila-dato"><span>Precio publicado</span><b id="lista-nuestro">—</b></div>
+          <div class="fila-dato destacado">
+            <span>Por 500 g</span>
+            <b id="monto-nuestro">—</b>
+            <div class="barra"><i id="bar-nuestro"></i></div>
+          </div>
+          <div class="fila-estado"><p class="ahorro">Nuestro precio</p></div>
+          <a href="#producto" class="boton relleno chico">Comprar</a>
+        </article>
+
+        <!-- Juan Valdez -->
+        <article class="fila" id="fila-juan">
+          <div class="fila-bolsa">
+            <svg viewBox="0 0 90 110" aria-hidden="true">
+              <path d="M16 10 H74 L80 100 H10 Z" fill="#8b1e1e"/>
+              <path d="M16 10 H74 L74.5 18 H15.5 Z" fill="#5f1111"/>
+              <rect x="20" y="36" width="50" height="50" fill="#f0e3cf"/>
+              <circle cx="45" cy="56" r="9" fill="none" stroke="#8b1e1e" stroke-width="2"/>
+              <rect x="28" y="72" width="34" height="3" fill="#8b1e1e"/>
+            </svg>
+          </div>
+          <div class="fila-nombre">
+            <h3>Juan Valdez</h3>
+            <p>Colina, bolsa de 454 g</p>
+          </div>
+          <div class="fila-dato"><span>Precio publicado</span><b id="lista-juan">—</b></div>
+          <div class="fila-dato destacado">
+            <span>Por 500 g</span>
+            <b id="monto-juan">—</b>
+            <div class="barra"><i id="bar-juan"></i></div>
+          </div>
+          <div class="fila-estado">
+            <p class="ahorro" id="ahorro-juan">Consultando</p>
+            <p class="tendencia" id="tend-juan"></p>
+          </div>
+          <button type="button" class="detalle-toggle" aria-expanded="false" aria-controls="detalle-juan">Ver detalle</button>
+
+          <div class="detalle" id="detalle-juan" inert>
+            <div class="detalle-interior">
+              <p>Marca colombiana de café con tiendas en todo el país. El precio corresponde a la bolsa Colina de 454 g publicada en Farmatodo el 14 de octubre de 2026.</p>
+              <ul class="especificaciones">
+                <li><span>Producto</span><b>Café Juan Valdez Colina, 454 g</b></li>
+                <li><span>Precio publicado</span><b>$53.450</b></li>
+                <li><span>Dónde se vende</span><b>Farmatodo y tiendas Juan Valdez</b></li>
+              </ul>
+              <div class="enlaces">
+                <a href="https://www.farmatodo.com.co/producto/224500207-cafe-juan-valdez-colina-bolsa-x-454-gr" target="_blank" rel="noopener noreferrer">Comprar en Farmatodo</a>
+                <a href="https://www.juanvaldezcafe.com/categorias/cafe-en-grano-molido" target="_blank" rel="noopener noreferrer">Ver el catálogo oficial</a>
+              </div>
+              <p class="pie-detalle">La imagen de la bolsa es una ilustración, no la presentación real del producto.</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Sello Rojo -->
+        <article class="fila" id="fila-sello">
+          <div class="fila-bolsa">
+            <svg viewBox="0 0 90 110" aria-hidden="true">
+              <path d="M16 10 H74 L80 100 H10 Z" fill="#b3202a"/>
+              <path d="M16 10 H74 L74.5 18 H15.5 Z" fill="#7d141c"/>
+              <rect x="20" y="36" width="50" height="50" fill="#f6efe6"/>
+              <circle cx="45" cy="58" r="12" fill="#b3202a"/>
+              <circle cx="45" cy="58" r="6" fill="none" stroke="#f6efe6" stroke-width="1.5"/>
+            </svg>
+          </div>
+          <div class="fila-nombre">
+            <h3>Sello Rojo</h3>
+            <p>Fuerte, bolsa de 500 g</p>
+          </div>
+          <div class="fila-dato"><span>Precio publicado</span><b id="lista-sello">—</b></div>
+          <div class="fila-dato destacado">
+            <span>Por 500 g</span>
+            <b id="monto-sello">—</b>
+            <div class="barra"><i id="bar-sello"></i></div>
+          </div>
+          <div class="fila-estado">
+            <p class="ahorro" id="ahorro-sello">Consultando</p>
+            <p class="tendencia" id="tend-sello"></p>
+          </div>
+          <button type="button" class="detalle-toggle" aria-expanded="false" aria-controls="detalle-sello">Ver detalle</button>
+
+          <div class="detalle" id="detalle-sello" inert>
+            <div class="detalle-interior">
+              <p>Marca tradicional colombiana de café tostado y molido, del Grupo Nutresa. Es una opción de supermercado pensada para el consumo diario, por eso su precio es mucho menor que el de un café especial de origen.</p>
+              <ul class="especificaciones">
+                <li><span>Producto</span><b>Café Sello Rojo Fuerte, 500 g</b></li>
+                <li><span>Precio publicado</span><b>$25.500</b></li>
+                <li><span>Dónde se vende</span><b>Farmatodo, Éxito y otros supermercados</b></li>
+              </ul>
+              <div class="enlaces">
+                <a href="https://www.farmatodo.com.co/producto/249050011-cafe-sello-rojo-fuerte-x-500-gr" target="_blank" rel="noopener noreferrer">Comprar en Farmatodo</a>
+                <a href="https://www.exito.com/sello-rojo" target="_blank" rel="noopener noreferrer">Ver en Éxito</a>
+              </div>
+              <p class="pie-detalle">La imagen de la bolsa es una ilustración, no la presentación real del producto.</p>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <p class="nota">Precios consultados el 14 de octubre de 2026. Pueden cambiar y variar según la tienda o la ciudad.</p>
+      <p class="actualizacion"><span class="punto"></span>Volvemos a consultar en <b id="contador">8</b> s. Última consulta: <b id="ultima-consulta">—</b></p>
+    </section>
+
+    <!-- ============ Carrito ============ -->
+    <section id="carrito" class="seccion claro">
+      <header class="seccion-cabeza">
+        <h2>Tu carrito</h2>
+      </header>
+      <div class="carrito">
+        <div class="carrito-lista" id="carrito-contenido"></div>
+
+        <aside class="resumen" id="resumen" hidden>
+          <h3>Resumen del pedido</h3>
+          <div class="linea"><span>Subtotal</span><b id="res-subtotal">—</b></div>
+          <div class="linea descuento" id="fila-descuento" hidden><span>Cupón HUILA10</span><b id="res-descuento">—</b></div>
+          <div class="linea total"><span>Total</span><b id="res-total">—</b></div>
+
+          <form class="cupon" id="form-cupon">
+            <label for="cupon">Código de cupón</label>
+            <div>
+              <input type="text" id="cupon" autocomplete="off" />
+              <button type="submit" class="boton-mini">Aplicar</button>
+            </div>
+          </form>
+          <p class="cupon-msg" id="cupon-msg">Prueba con HUILA10 para un 10% de descuento.</p>
+
+          <button type="button" class="boton relleno ancho" id="btn-pagar">Finalizar compra</button>
+          <button type="button" class="enlace-borrar" id="btn-vaciar">Vaciar carrito</button>
+        </aside>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="pie">
+    <p class="pie-marca">Origen Huila</p>
+    <p>Café especial de 500 g. Proyecto MVP, 2026.</p>
+  </footer>
+
+  <div class="aviso" id="aviso" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
